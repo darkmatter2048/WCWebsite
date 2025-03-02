@@ -103,8 +103,19 @@ var _hmt = _hmt || [];
 							</div>
 
 							<div class="banner-button">
-								<a href="https://wwt.lanzn.com/b03xje5uf">
-								</a>
+								<a id="lanzou" href="https://wwt.lanzn.com/b03xje5uf"> </a>
+                <script>
+                  const downlink = document.querySelector('#lanzou')
+                  downlink.addEventListener('click', async e => {
+                    e.preventDefault() // 阻止默认跳转
+                    try {
+                      await navigator.clipboard.writeText('4ar1') // 将内容写入剪贴板
+                      window.location.href = downlink.getAttribute("href") // 跳转到指定网页
+                    } catch (err) {
+                      console.error('Failed to copy text: ', err)
+                    }
+                  })
+                </script>
 							</div>
 							<!--
 							<div class="banner-button blue-button">
@@ -114,6 +125,7 @@ var _hmt = _hmt || [];
 							-->
 							<div class="clearfix"> </div>
 						</div>
+						<p style="text-align: center;">点击按钮自动复制提取码</p>
 					</div>
 					<div class="col-md-5 slid">
 						<!--- banner Slider starts Here --->
